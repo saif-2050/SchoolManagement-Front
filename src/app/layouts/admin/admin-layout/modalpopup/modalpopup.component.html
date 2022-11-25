@@ -1,0 +1,93 @@
+<div class="container">
+    <div class="row">
+  
+      <div class="col-2">
+        <div class="user-details-container">
+          <img class="user-image" src="assets/img/student.png"/>
+          <span class="user-title" >{{Name}}</span>
+          <p class="user-bio"></p>
+        </div>
+      </div>
+      <div class="col">
+<h1 mat-dialog-title>Student</h1>
+<form [formGroup]="Reactiveform" (ngSubmit)="SaveStudent()">
+    <div mat-dialog-content>
+        <mat-card-content>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field class="full-width">
+                        <mat-label>Cin</mat-label>
+                        <input placeholder="Code" matInput formControlName="cin">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field class="full-width">
+                        <mat-label>Name</mat-label>
+                        <input placeholder="Name" matInput formControlName="Name" [(ngModel)]="Name">
+                    </mat-form-field>
+                </div>
+              </div>
+
+              
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field class="full-width">
+                        <mat-label>Email</mat-label>
+                        <input placeholder="Email" matInput formControlName="Email">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">          
+                    <mat-form-field class="full-width">
+                        <mat-label>Phone</mat-label>
+                        <input placeholder="Phone" matInput formControlName="Phone">
+                    </mat-form-field>
+                </div>
+              </div>
+
+
+              <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field class="full-width">
+                        <mat-label>Your birthday</mat-label>
+                        <input matInput [matDatepicker]="picker" placeholder="Your birthday" formControlName="Birthday" required>
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">          
+                    <mat-radio-group formControlName="Gender" aria-label="Select an Gender">
+                        <mat-radio-button value="M">Male</mat-radio-button>
+                        <mat-radio-button value="F">Female</mat-radio-button>
+                      </mat-radio-group>
+                </div>
+              </div>
+        
+              <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field class="full-width">
+                        <mat-label>Your Class</mat-label>
+                        <mat-select placeholder="Class" formControlName="Class">
+                            <mat-option *ngFor="let gender of genders" [value]="gender">
+                              {{ gender }}
+                            </mat-option>
+                          </mat-select>
+                    </mat-form-field>
+                </div>
+                
+              </div>
+
+
+             
+        </mat-card-content>
+
+    </div>
+    <div mat-dialog-actions>
+      <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+      <button type="submit" mat-raised-button color="primary" cdkFocusInitial>Save</button>
+    </div>
+</form>
+      </div>
+
+</div>
+</div>
