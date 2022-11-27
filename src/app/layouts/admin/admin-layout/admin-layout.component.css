@@ -5,4 +5,13 @@
 .member-change {
 display: block;
 
-  } 
+}
+
+.setting-default {
+  display: none;
+}
+
+.setting-change {
+display: block;
+
+} 

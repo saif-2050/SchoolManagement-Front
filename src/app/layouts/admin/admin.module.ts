@@ -9,6 +9,9 @@ import {MaterialModule} from '../../material-module';
 import { ModalpopupComponent } from './admin-layout/modalpopup/modalpopup.component'
 import { ReactiveFormsModule } from '@angular/forms';
 import { DeletepopupComponent } from './admin-layout/deletepopup/deletepopup.component';
+import { ClassManagementComponent } from './admin-layout/class-management/class-management.component';
+import { SubjectManagementComponent } from './admin-layout/subject-management/subject-management.component';
+import { ScheduleComponent } from './admin-layout/schedule/schedule.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +21,9 @@ import { DeletepopupComponent } from './admin-layout/deletepopup/deletepopup.com
     TeachersManagementComponent,
     ModalpopupComponent,
     DeletepopupComponent,
+    ClassManagementComponent,
+    SubjectManagementComponent,
+    ScheduleComponent,
   ],
   imports: [CommonModule, AdminRoutingModule,MaterialModule,ReactiveFormsModule],
 })

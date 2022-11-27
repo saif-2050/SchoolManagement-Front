@@ -10,7 +10,6 @@ import { LoginComponent } from './login/login.component';
 import { SetNewPasswordComponent } from './set-new-password/set-new-password.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component'
-import { AdminModule } from './layouts/admin/admin.module';
 import { TeacherModule } from './layouts/teacher/teacher.module';
 import { LandingModule } from './layouts/landing/landing.module';
 import { StudentModule } from './layouts/student/student.module';
@@ -29,7 +28,6 @@ import { StudentModule } from './layouts/student/student.module';
     HttpClientModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
-    AdminModule,
     TeacherModule,
     LandingModule,
     StudentModule,
