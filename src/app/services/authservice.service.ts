@@ -11,29 +11,29 @@ export class AuthserviceService {
   constructor(private http: HttpClient) { }
 
   SetNewPassword(data:any){
-    return this.http.post('http://localhost:8080/SetPassword',data)
+    return this.http.post('http://localhost:9000/SetPassword',data)
   }
   login(data:any){
-    return this.http.post('http://localhost:8080/login',data)
+    return this.http.post('http://localhost:9000/login',data)
   }
 
   getstudents(){
-    return this.http.get('http://localhost:8080/etudiants')
+    return this.http.get('http://localhost:9000/etudiants')
   }
   
   getonestudent(id:any){
-    return this.http.get('http://localhost:8080/getstudent/'+id)
+    return this.http.get('http://localhost:9000/getstudent/'+id)
   }
   addstudent(data:any){
-    return this.http.post('http://localhost:8080/add_etudiant',data)
+    return this.http.post('http://localhost:9000/add_etudiant',data)
 
   }
   RemoveStudent(id:any){
-    return this.http.delete('http://localhost:8080/delete_student/'+id);
+    return this.http.delete('http://localhost:9000/delete_student/'+id);
   }
 
   updateStudent(id:any , data:any){
-    return this.http.put('http://localhost:8080/update_student/'+id,data);
+    return this.http.put('http://localhost:9000/update_student/'+id,data);
   }
   SaveData(token: any , role: any ){
     localStorage.setItem('token',token) ; 
@@ -81,4 +81,31 @@ export class AuthserviceService {
     }else{
         return "false" ; 
     }
-  }}
+  }
+  //teacher
+  getteachers(){
+    return this.http.get('http://localhost:9000/teachers')
+  }
+  getoneteacher(id:any){
+    return this.http.get('http://localhost:9000/getteacher/'+id)
+  }
+  addteacher(data:any){
+    return this.http.post('http://localhost:9000/add_teacher',data)
+
+  }
+  RemoveTeacher(id:any){
+    return this.http.delete('http://localhost:9000/delete_teacher/'+id);
+  } 
+   updateTeacher(id:any , data:any){
+    return this.http.put('http://localhost:9000/update_teacher/'+id,data);
+  }
+
+}
+  
+  
+  
+  
+  
+  
+
+  

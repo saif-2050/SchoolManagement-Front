@@ -4,8 +4,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { AuthserviceService } from 'src/app/services/authservice.service';
-import { DeletepopupComponent } from '../deletepopup/deletepopup.component';
-import { ModalpopupComponent } from '../modalpopup/modalpopup.component';
+import { DeletepopupComponent } from './deletepopup/deletepopup.component';
+import { ModalpopupComponent } from './modalpopup/modalpopup.component';
 
 @Component({
   selector: 'frontend-students-management',
