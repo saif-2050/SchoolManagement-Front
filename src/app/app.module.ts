@@ -31,7 +31,8 @@ import { StudentModule } from './layouts/student/student.module';
     TeacherModule,
     LandingModule,
     StudentModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

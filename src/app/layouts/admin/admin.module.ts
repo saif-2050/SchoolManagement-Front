@@ -20,6 +20,8 @@ import { AddsheduleComponent } from './admin-layout/schedule/addshedule/addshedu
 import { ShowsheduleComponent } from './admin-layout/schedule/showshedule/showshedule.component';
 import { EditscheduleComponent } from './admin-layout/schedule/editschedule/editschedule.component';
 
+import { AddpopupComponent } from './admin-layout/teachers-management/addpopup/addpopup.component';
+import { tDeletepopupComponent } from './admin-layout/teachers-management/tdeletepopup/tdeletepopup.component';
 @NgModule({
   declarations: [
     AdminLayoutComponent,
@@ -38,6 +40,8 @@ import { EditscheduleComponent } from './admin-layout/schedule/editschedule/edit
     AddsheduleComponent,
     ShowsheduleComponent,
     EditscheduleComponent,
+    AddpopupComponent,
+    tDeletepopupComponent
   ],
   imports: [CommonModule, AdminRoutingModule,MaterialModule,ReactiveFormsModule],
 })
