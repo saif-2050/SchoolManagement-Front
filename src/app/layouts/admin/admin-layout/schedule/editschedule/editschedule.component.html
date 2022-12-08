@@ -1,0 +1,512 @@
+<div class="page-wrapper">
+    <div class="content container-fluid">
+    <div class="row">
+    <div class="col-xl-12">
+    
+    <div class="page-header">
+    <div class="row">
+    <div class="col-sm-12">
+    <h3 class="page-title">Edit Schedule</h3>
+    </div>
+    </div>
+    </div>
+   
+    <form [formGroup]="Reactiveform" (ngSubmit)="SaveSchedule()">
+    <div class="card" >
+        <div class="card-body">
+        <div class="bank-inner-details">
+        <div class="row">
+        <div class="col-lg-12 col-md-12">
+        
+            <div class="container">
+                <div class="timetable-img text-center">
+                    <h3> Class: {{NameClass}} </h3>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered text-center">
+                        <thead>
+                            <tr class="bg">
+                                <th class="text-uppercase">Time
+                                </th>
+                                <th class="text-uppercase">Monday</th>
+                                <th class="text-uppercase">Tuesday</th>
+                                <th class="text-uppercase">Wednesday</th>
+                                <th class="text-uppercase">Thursday</th>
+                                <th class="text-uppercase">Friday</th>
+                                <th class="text-uppercase">Saturday</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="align-middle">9h00-10h30</td>
+                                <td>
+                                    <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16 xs-font-size13">
+                                        <mat-select placeholder="Subject" formControlName="Mon_9h">
+                                            <mat-option *ngFor="let subject of allSubjects" [value]="subject" required>
+                                              {{ subject }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        <mat-select placeholder="Teacher" formControlName="MonTea_9h">
+                                            <mat-option *ngFor="let teacher of Teachers" [value]="teacher" required>
+                                              {{ teacher }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">
+                                        <mat-select placeholder="Subject" formControlName="Tue_9h">
+                                            <mat-option *ngFor="let subject of allSubjects" [value]="subject" required>
+                                              {{ subject }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        <mat-select placeholder="Teacher" formControlName="TueTea_9h">
+                                            <mat-option *ngFor="let teacher of Teachers" [value]="teacher" required>
+                                              {{ teacher }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">
+                                        <mat-select placeholder="Subject" formControlName="Wen_9h">
+                                            <mat-option *ngFor="let subject of allSubjects" [value]="subject" required>
+                                              {{ subject }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        <mat-select placeholder="Teacher" formControlName="WenTea_9h">
+                                            <mat-option *ngFor="let teacher of Teachers" [value]="teacher" required>
+                                              {{ teacher }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">
+                                        <mat-select placeholder="Subject" formControlName="Thu_9h">
+                                            <mat-option *ngFor="let subject of allSubjects" [value]="subject" required>
+                                              {{ subject }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        <mat-select placeholder="Teacher" formControlName="ThuTea_9h">
+                                            <mat-option *ngFor="let teacher of Teachers" [value]="teacher" required>
+                                              {{ teacher }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="bg-purple padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">
+                                        <mat-select placeholder="Subject" formControlName="Fri_9h">
+                                            <mat-option *ngFor="let subject of allSubjects" [value]="subject" required>
+                                              {{ subject }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        <mat-select placeholder="Teacher" formControlName="FriTea_9h">
+                                            <mat-option *ngFor="let teacher of Teachers" [value]="teacher" required>
+                                              {{ teacher }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">
+                                        <mat-select placeholder="Subject" formControlName="Sat_9h">
+                                            <mat-option *ngFor="let subject of allSubjects" [value]="subject" required>
+                                              {{ subject }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        <mat-select placeholder="Teacher" formControlName="SatTea_9h">
+                                            <mat-option *ngFor="let teacher of Teachers" [value]="teacher" required>
+                                              {{ teacher }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="align-middle">10h45-12h15</td>
+                                <td>
+                                    <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">
+                                        <mat-select placeholder="Subject" formControlName="Mon_10h">
+                                            <mat-option *ngFor="let subject of allSubjects" [value]="subject" required>
+                                              {{ subject }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        <mat-select placeholder="Teacher" formControlName="MonTea_10h">
+                                            <mat-option *ngFor="let teacher of Teachers" [value]="teacher" required>
+                                              {{ teacher }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">
+                                        <mat-select placeholder="Subject" formControlName="Tue_10h">
+                                            <mat-option *ngFor="let subject of allSubjects" [value]="subject" required>
+                                              {{ subject }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        <mat-select placeholder="Teacher" formControlName="TueTea_10h">
+                                            <mat-option *ngFor="let teacher of Teachers" [value]="teacher" required>
+                                              {{ teacher }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="bg-purple padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">
+                                        <mat-select placeholder="Subject" formControlName="Wen_10h">
+                                            <mat-option *ngFor="let subject of allSubjects" [value]="subject" required>
+                                              {{ subject }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        <mat-select placeholder="Teacher" formControlName="WenTea_10h">
+                                            <mat-option *ngFor="let teacher of Teachers" [value]="teacher" required>
+                                              {{ teacher }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">
+                                        <mat-select placeholder="Subject" formControlName="Thu_10h">
+                                            <mat-option *ngFor="let subject of allSubjects" [value]="subject" required>
+                                              {{ subject }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        <mat-select placeholder="Teacher" formControlName="ThuTea_10h">
+                                            <mat-option *ngFor="let teacher of Teachers" [value]="teacher" required>
+                                              {{ teacher }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">
+                                        <mat-select placeholder="Subject" formControlName="Fri_10h">
+                                            <mat-option *ngFor="let subject of allSubjects" [value]="subject" required>
+                                              {{ subject }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        <mat-select placeholder="Teacher" formControlName="FriTea_10h">
+                                            <mat-option *ngFor="let teacher of Teachers" [value]="teacher" required>
+                                              {{ teacher }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">
+                                        <mat-select placeholder="Subject" formControlName="Sat_10h">
+                                            <mat-option *ngFor="let subject of allSubjects" [value]="subject" required>
+                                              {{ subject }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        <mat-select placeholder="Teacher" formControlName="SatTea_10h">
+                                            <mat-option *ngFor="let teacher of Teachers" [value]="teacher" required>
+                                              {{ teacher }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="align-middle">12h15-13h</td>
+                                <td>
+                                    <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Break</span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                </td>
+                                <td>
+                                    <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Break</span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                </td>
+                                <td>
+                                    <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Break</span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                </td>
+                                <td>
+                                    <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Break</span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                </td>
+                                <td>
+                                    <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Break</span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                </td>
+                                <td>
+                                    <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Break</span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="align-middle">13h00-14h30</td>
+                                <td>
+                                    <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">
+                                        <mat-select placeholder="Subject" formControlName="Mon_13h">
+                                            <mat-option *ngFor="let subject of allSubjects" [value]="subject" required>
+                                              {{ subject }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        <mat-select placeholder="Teacher" formControlName="MonTea_13h">
+                                            <mat-option *ngFor="let teacher of Teachers" [value]="teacher" required>
+                                              {{ teacher }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="bg-purple padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">
+                                        <mat-select placeholder="Subject" formControlName="Tue_13h">
+                                            <mat-option *ngFor="let subject of allSubjects" [value]="subject" required>
+                                              {{ subject }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text"> <mat-select placeholder="Teacher" formControlName="TueTea_13h">
+                                        <mat-option *ngFor="let teacher of Teachers" [value]="teacher" required>
+                                          {{ teacher }}
+                                        </mat-option>
+                                    </mat-select>
+                                </div>
+                                </td>
+                                <td>
+                                    <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">
+                                        <mat-select placeholder="Subject" formControlName="Wen_13h">
+                                            <mat-option *ngFor="let subject of allSubjects" [value]="subject" required>
+                                              {{ subject }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        <mat-select placeholder="Teacher" formControlName="WenTea_13h">
+                                            <mat-option *ngFor="let teacher of Teachers" [value]="teacher" required>
+                                              {{ teacher }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">
+                                        <mat-select placeholder="Subject" formControlName="Thu_13h">
+                                            <mat-option *ngFor="let subject of allSubjects" [value]="subject" required>
+                                              {{ subject }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        <mat-select placeholder="Teacher" formControlName="ThuTea_13h">
+                                            <mat-option *ngFor="let teacher of Teachers" [value]="teacher" required>
+                                              {{ teacher }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">
+                                        <mat-select placeholder="Subject" formControlName="Fri_13h">
+                                            <mat-option *ngFor="let subject of allSubjects" [value]="subject" required>
+                                              {{ subject }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        <mat-select placeholder="Teacher" formControlName="FriTea_13h">
+                                            <mat-option *ngFor="let teacher of Teachers" [value]="teacher" required>
+                                              {{ teacher }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">
+                                        <mat-select placeholder="Subject" formControlName="Sat_13h">
+                                            <mat-option *ngFor="let subject of allSubjects" [value]="subject" required>
+                                              {{ subject }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        <mat-select placeholder="Teacher" formControlName="SatTea_13h">
+                                            <mat-option *ngFor="let teacher of Teachers" [value]="teacher" required>
+                                              {{ teacher }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="align-middle">15h45-16h15</td>
+                                <td>
+                                    <span class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">
+                                        <mat-select placeholder="Subject" formControlName="Mon_15h">
+                                            <mat-option *ngFor="let subject of allSubjects" [value]="subject" required>
+                                              {{ subject }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        <mat-select placeholder="Teacher" formControlName="MonTea_15h">
+                                            <mat-option *ngFor="let teacher of Teachers" [value]="teacher" required>
+                                              {{ teacher }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">
+                                        <mat-select placeholder="Subject" formControlName="Tue_15h">
+                                            <mat-option *ngFor="let subject of allSubjects" [value]="subject" required>
+                                              {{ subject }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        <mat-select placeholder="Teacher" formControlName="TueTea_15h">
+                                            <mat-option *ngFor="let teacher of Teachers" [value]="teacher" required>
+                                              {{ teacher }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">
+                                        <mat-select placeholder="Subject" formControlName="Wen_15h">
+                                            <mat-option *ngFor="let subject of allSubjects" [value]="subject" required>
+                                              {{ subject }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        <mat-select placeholder="Teacher" formControlName="WenTea_15h">
+                                            <mat-option *ngFor="let teacher of Teachers" [value]="teacher" required>
+                                              {{ teacher }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">
+                                        <mat-select placeholder="Subject" formControlName="Thu_15h">
+                                            <mat-option *ngFor="let subject of allSubjects" [value]="subject" required>
+                                              {{ subject }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        <mat-select placeholder="Teacher" formControlName="ThuTea_15h">
+                                            <mat-option *ngFor="let teacher of Teachers" [value]="teacher" required>
+                                              {{ teacher }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">
+                                        <mat-select placeholder="Subject" formControlName="Fri_15h">
+                                            <mat-option *ngFor="let subject of allSubjects" [value]="subject" required>
+                                              {{ subject }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        <mat-select placeholder="Teacher" formControlName="FriTea_15h">
+                                            <mat-option *ngFor="let teacher of Teachers" [value]="teacher" required>
+                                              {{ teacher }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">
+                                        <mat-select placeholder="Subject" formControlName="Sat_15h">
+                                            <mat-option *ngFor="let subject of allSubjects" [value]="subject" required>
+                                              {{ subject }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        <mat-select placeholder="Teacher" formControlName="SatTea_15h">
+                                            <mat-option *ngFor="let teacher of Teachers" [value]="teacher" required>
+                                              {{ teacher }}
+                                            </mat-option>
+                                        </mat-select>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+             
+        </div>
+        </div>
+        </div>
+        </div>   
+    </div>
+    <div class=" blog-categories-btn pt-0">
+        <div class="bank-details-btn ">
+        
+        <button type="submit" class="btn bank-cancel-btn me-2" >Sumbit</button>
+        </div>
+    </div>
+    </form>
+
+    </div>
+    </div>
+    </div>
+    </div>

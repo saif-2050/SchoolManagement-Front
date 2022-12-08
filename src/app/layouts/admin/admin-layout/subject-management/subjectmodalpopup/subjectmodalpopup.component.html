@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+    
+    <div class="col">
+    <h1 mat-dialog-title>Subject</h1>
+    <form [formGroup]="Reactiveform" (ngSubmit)="SaveSubject()">
+        <div mat-dialog-content>
+            <mat-card-content>
+    
+                <div class="row">
+                    <div class="col-md-6">
+                        <mat-form-field class="full-width">
+                            <mat-label>Subject Name</mat-label>
+                            <input placeholder="Subject Name" matInput formControlName="SubjectName">
+                        </mat-form-field>
+                    </div>
+                    
+                  </div>       
+            </mat-card-content>
+    
+        </div>
+        <div mat-dialog-actions>
+          <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+          <button type="submit" mat-raised-button color="primary" cdkFocusInitial>Save</button>
+        </div>
+    </form>
+          </div>
+    
+    </div>
+    </div>

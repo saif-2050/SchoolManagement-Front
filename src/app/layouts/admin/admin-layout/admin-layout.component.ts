@@ -13,10 +13,14 @@ export class AdminLayoutComponent implements OnInit {
   memberStyle = 'member-default';
   settingStyle = 'setting-default';
 
+  token = "fgfdgdfg" ; 
+  userid = "255112" ;
+
   constructor(private route:Router) {
     this.dash = this.route.url;
     
   }
+
 
   setsetting(){
     if (this.setting == false){

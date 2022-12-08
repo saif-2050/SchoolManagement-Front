@@ -10,13 +10,74 @@ export class AuthserviceService {
   helper = new JwtHelperService()
   constructor(private http: HttpClient) { }
 
+
+ 
+  getoneschedule(id:any){
+    return this.http.get('http://localhost:8080/getschedule/'+id)
+  }
+  getallschedules(){
+    return this.http.get('http://localhost:8080/allschedule')
+  }
+  
+  addSchedule(data:any){
+    return this.http.post('http://localhost:8080/add_schedule',data)
+  }
+
+
+  getallsubject(){
+    return this.http.get('http://localhost:8080/allsubject')
+  }
+
+  addSubject(data:any){
+    return this.http.post('http://localhost:8080/add_subject',data)
+
+  }
+
+  updateSubject(id:any , data:any){
+    return this.http.put('http://localhost:8080/update_subject/'+id,data);
+  }
+
+  RemoveSubject(id:any){
+    return this.http.delete('http://localhost:8080/delete_subject/'+id);
+  }
+
+
+  getonesubject(id:any){
+    return this.http.get('http://localhost:8080/getsubject/'+id)
+  }
+
+
+  getallclass(){
+    return this.http.get('http://localhost:8080/allclass')
+
+  }
+
+  addClass(data:any){
+    return this.http.post('http://localhost:8080/add_class',data)
+
+  }
+
+  updateClass(id:any , data:any){
+    return this.http.put('http://localhost:8080/update_class/'+id,data);
+  }
+
+  RemoveClass(id:any){
+    return this.http.delete('http://localhost:8080/delete_class/'+id);
+  }
+
+
+  getoneclass(id:any){
+    return this.http.get('http://localhost:8080/getclass/'+id)
+  }
+
+
   SetNewPassword(data:any){
     return this.http.post('http://localhost:8080/SetPassword',data)
   }
   login(data:any){
     return this.http.post('http://localhost:8080/login',data)
   }
-
+  
   getstudents(){
     return this.http.get('http://localhost:8080/etudiants')
   }

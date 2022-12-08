@@ -6,12 +6,19 @@ import { AdminDashboardComponent } from './admin-layout/admin-dashboard/admin-da
 import { StudentsManagementComponent } from './admin-layout/students-management/students-management.component';
 import { TeachersManagementComponent } from './admin-layout/teachers-management/teachers-management.component';
 import {MaterialModule} from '../../material-module';
-import { ModalpopupComponent } from './admin-layout/modalpopup/modalpopup.component'
+import { ModalpopupComponent } from './admin-layout/students-management/modalpopup/modalpopup.component'
 import { ReactiveFormsModule } from '@angular/forms';
-import { DeletepopupComponent } from './admin-layout/deletepopup/deletepopup.component';
+import { DeletepopupComponent } from './admin-layout/students-management/deletepopup/deletepopup.component';
 import { ClassManagementComponent } from './admin-layout/class-management/class-management.component';
 import { SubjectManagementComponent } from './admin-layout/subject-management/subject-management.component';
 import { ScheduleComponent } from './admin-layout/schedule/schedule.component';
+import { ClassmodalpopupComponent } from './admin-layout/class-management/classmodalpopup/classmodalpopup.component';
+import { ClassdeletemodalComponent } from './admin-layout/class-management/classdeletemodal/classdeletemodal.component';
+import { SubjectmodalpopupComponent } from './admin-layout/subject-management/subjectmodalpopup/subjectmodalpopup.component';
+import { DeleesubjectmodalComponent } from './admin-layout/subject-management/deleesubjectmodal/deleesubjectmodal.component';
+import { AddsheduleComponent } from './admin-layout/schedule/addshedule/addshedule.component';
+import { ShowsheduleComponent } from './admin-layout/schedule/showshedule/showshedule.component';
+import { EditscheduleComponent } from './admin-layout/schedule/editschedule/editschedule.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +31,13 @@ import { ScheduleComponent } from './admin-layout/schedule/schedule.component';
     ClassManagementComponent,
     SubjectManagementComponent,
     ScheduleComponent,
+    ClassmodalpopupComponent,
+    ClassdeletemodalComponent,
+    SubjectmodalpopupComponent,
+    DeleesubjectmodalComponent,
+    AddsheduleComponent,
+    ShowsheduleComponent,
+    EditscheduleComponent,
   ],
   imports: [CommonModule, AdminRoutingModule,MaterialModule,ReactiveFormsModule],
 })

@@ -6,7 +6,10 @@ import { TeacherLayoutComponent } from '../teacher/teacher-layout/teacher-layout
 import { AdminDashboardComponent } from './admin-layout/admin-dashboard/admin-dashboard.component';
 import { AdminLayoutComponent } from './admin-layout/admin-layout.component';
 import { ClassManagementComponent } from './admin-layout/class-management/class-management.component';
+import { AddsheduleComponent } from './admin-layout/schedule/addshedule/addshedule.component';
+import { EditscheduleComponent } from './admin-layout/schedule/editschedule/editschedule.component';
 import { ScheduleComponent } from './admin-layout/schedule/schedule.component';
+import { ShowsheduleComponent } from './admin-layout/schedule/showshedule/showshedule.component';
 import { StudentsManagementComponent } from './admin-layout/students-management/students-management.component';
 import { SubjectManagementComponent } from './admin-layout/subject-management/subject-management.component';
 import { TeachersManagementComponent } from './admin-layout/teachers-management/teachers-management.component';
@@ -19,6 +22,9 @@ const routes: Routes = [
   { path: 'teachers', component: TeachersManagementComponent },
   { path: 'subject', component: SubjectManagementComponent },
   { path: 'schedule', component: ScheduleComponent },
+  { path: 'addschedule', component: AddsheduleComponent },
+  { path: 'schedule/:id', component: ShowsheduleComponent },
+  { path: 'editschedule/:id', component: EditscheduleComponent },
   { path: 'class', component: ClassManagementComponent },
 
   ] },   // Check auth Admin && ajouter partie Admin (Template)
