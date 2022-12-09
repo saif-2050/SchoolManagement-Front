@@ -39,13 +39,17 @@ export class SetNewPasswordComponent {
       //console.log(this.DataResponse.Succ);
       //this.toastr.success("you are successfully logged in ", 'Welcome');
       this.Role = this.auth.getrole()
-      console.log(this.Role)
+     // console.log(this.Role)
       if(this.Role=="student"){
-        
-        this.routes.navigate(['/student']);
+        this.toastr.success("Password successfully Updated", 'Updated');
+        this.auth.RemoveData() ;
+        this.routes.navigate(['/login']);
+       
 
       }else if(this.Role=="teacher"){
-        this.routes.navigate(['/teacher']);
+        this.toastr.success("Password successfully Updated", 'Updated');
+        this.auth.RemoveData() ;
+        this.routes.navigate(['/login']);
       }else{
         this.routes.navigate(['/Dash']);
         console.log("your are in dashboard") ;

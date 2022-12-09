@@ -1,0 +1,485 @@
+<div class="page-wrapper">
+    <div class="content container-fluid">
+    <div class="row">
+    <div class="col-xl-12">
+    
+    <div class="page-header">
+    <div class="row">
+    <div class="col-sm-12">
+    <h3 class="page-title">Show Schedule</h3>
+    </div>
+    </div>
+    </div>
+   
+   
+    <div class="card" >
+        <div class="card-body">
+        <div class="bank-inner-details">
+        <div class="row">
+        <div class="col-lg-12 col-md-12">
+        
+            <div class="container" *ngIf="created == 'true'">
+                <div class="timetable-img text-center">
+                    <h3> Class : {{sheduledata.Succ.ClassName }} </h3>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered text-center">
+                        <thead>
+                            <tr class="bg">
+                                <th class="text-uppercase">Time
+                                </th>
+                                <th class="text-uppercase">Monday</th>
+                                <th class="text-uppercase">Tuesday</th>
+                                <th class="text-uppercase">Wednesday</th>
+                                <th class="text-uppercase">Thursday</th>
+                                <th class="text-uppercase">Friday</th>
+                                <th class="text-uppercase">Saturday</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="align-middle">9h00-10h30</td>
+                                <td  *ngIf="sheduledata.Succ.Mon_9h != 'Nothing' ">
+                                    <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16 xs-font-size13">
+                                        {{sheduledata.Succ.Mon_9h}}
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        {{sheduledata.Succ.MonTea_9h}}
+                                        
+                                    </div>
+                                </td>
+                                <td class="bg-light-gray" *ngIf="sheduledata.Succ.Mon_9h == 'Nothing' " >
+
+                                </td>
+                                <td  *ngIf="sheduledata.Succ.Tue_9h != 'Nothing' ">
+                                    <span class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">
+                                        
+                                        {{sheduledata.Succ.Tue_9h}}
+
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        
+                                        {{sheduledata.Succ.TueTea_9h}}
+
+                                    </div>
+                                </td>
+                                <td class="bg-light-gray" *ngIf="sheduledata.Succ.Tue_9h == 'Nothing' " >
+
+                                </td>
+
+                                <td  *ngIf="sheduledata.Succ.Wen_9h != 'Nothing' ">
+
+                                    <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">
+                                        
+                                        {{sheduledata.Succ.Wen_9h}}
+
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        
+                                        {{sheduledata.Succ.WenTea_9h}}
+
+                                    </div>
+                                </td>
+                                <td class="bg-light-gray" *ngIf="sheduledata.Succ.Wen_9h == 'Nothing' " >
+
+                                </td>
+                                <td  *ngIf="sheduledata.Succ.Thu_9h != 'Nothing' ">
+                                    <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">
+                                        {{sheduledata.Succ.Thu_9h}}
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        {{sheduledata.Succ.ThuTea_9h}}
+
+                                    </div>
+                                </td>
+                                <td class="bg-light-gray" *ngIf="sheduledata.Succ.Thu_9h == 'Nothing' " >
+
+                                </td>
+
+                                <td  *ngIf="sheduledata.Succ.Fri_9h != 'Nothing' ">
+                                    <span class="bg-purple padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">
+                                        {{sheduledata.Succ.Fri_9h}}
+
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        
+                                        {{sheduledata.Succ.FriTea_9h}}
+
+                                    </div>
+                                </td>
+                                <td class="bg-light-gray" *ngIf="sheduledata.Succ.Fri_9h == 'Nothing' " >
+
+                                </td>
+                                <td  *ngIf="sheduledata.Succ.Sat_9h != 'Nothing' ">
+                                    <span class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">
+                                        
+                                        {{sheduledata.Succ.Sat_9h}}
+
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        
+                                        {{sheduledata.Succ.SatTea_9h}}
+
+                                    </div>
+                                </td>
+                                <td class="bg-light-gray" *ngIf="sheduledata.Succ.Sat_9h == 'Nothing' " >
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="align-middle">10h45-12h15</td>
+                                <td  *ngIf="sheduledata.Succ.Mon_10h != 'Nothing' ">
+                                    <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">
+                                        
+                                        {{sheduledata.Succ.Mon_10h}}
+
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        
+
+                                        {{sheduledata.Succ.MonTea_10h}}
+
+                                    </div>
+                                </td>
+                                <td class="bg-light-gray" *ngIf="sheduledata.Succ.Mon_10h == 'Nothing' " >
+
+                                </td>
+                                <td  *ngIf="sheduledata.Succ.Tue_10h != 'Nothing' ">
+                                    <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">
+                                        
+                                        {{sheduledata.Succ.Tue_10h}}
+
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        
+                                        {{sheduledata.Succ.TueTea_10h}}
+
+                                    </div>
+                                </td>
+                                <td class="bg-light-gray" *ngIf="sheduledata.Succ.Tue_10h == 'Nothing' " >
+
+                                </td>
+                                <td  *ngIf="sheduledata.Succ.Wen_10h != 'Nothing' ">
+                                    <span class="bg-purple padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">
+                                        
+                                        {{sheduledata.Succ.Wen_10h}}
+
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        
+                                        {{sheduledata.Succ.WenTea_10h}}
+
+                                    </div>
+                                </td>
+                                <td class="bg-light-gray" *ngIf="sheduledata.Succ.Wen_10h == 'Nothing' " >
+
+                                </td>
+                                <td  *ngIf="sheduledata.Succ.Thu_10h != 'Nothing' ">
+                                    <span class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">
+                                        
+                                        {{sheduledata.Succ.Thu_10h}}
+
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        
+                                        {{sheduledata.Succ.ThuTea_10h}}
+
+                                    </div>
+                                </td>
+                                <td class="bg-light-gray" *ngIf="sheduledata.Succ.Thu_10h == 'Nothing' " >
+
+                                </td>
+                                <td  *ngIf="sheduledata.Succ.Fri_10h != 'Nothing' ">
+                                    <span class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">
+                                        
+                                        {{sheduledata.Succ.Fri_10h}}
+
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        
+                                        {{sheduledata.Succ.FriTea_10h}}
+
+                                    </div>
+                                </td>
+                                <td class="bg-light-gray" *ngIf="sheduledata.Succ.Fri_10h == 'Nothing' " >
+
+                                </td>
+                                <td  *ngIf="sheduledata.Succ.Sat_10h != 'Nothing' ">
+                                    <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">
+                                        
+                                        {{sheduledata.Succ.Sat_10h}}
+
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        
+                                        {{sheduledata.Succ.SatTea_10h}}
+
+                                    </div>
+                                </td>
+                                <td class="bg-light-gray" *ngIf="sheduledata.Succ.Sat_10h == 'Nothing' " >
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="align-middle">12h15-13h</td>
+                                <td>
+                                    <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Break</span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                </td>
+                                <td>
+                                    <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Break</span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                </td>
+                                <td>
+                                    <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Break</span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                </td>
+                                <td>
+                                    <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Break</span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                </td>
+                                <td>
+                                    <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Break</span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                </td>
+                                <td>
+                                    <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Break</span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="align-middle">13h00-14h30</td>
+                                <td  *ngIf="sheduledata.Succ.Mon_13h != 'Nothing' ">
+                                    <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">
+                                        
+                                        {{sheduledata.Succ.Mon_13h}}
+
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        
+                                        {{sheduledata.Succ.MonTea_13h}}
+
+                                    </div>
+                                </td>
+                                <td class="bg-light-gray" *ngIf="sheduledata.Succ.Mon_13h == 'Nothing' " >
+
+                                </td>
+                                <td  *ngIf="sheduledata.Succ.Tue_13h != 'Nothing' ">
+                                    <span class="bg-purple padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">
+                                        
+                                        {{sheduledata.Succ.Tue_13h}}
+
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        
+                                        {{sheduledata.Succ.TueTea_13h}}
+
+                                </div>
+                                </td>
+                                <td class="bg-light-gray" *ngIf="sheduledata.Succ.Tue_13h == 'Nothing' " >
+
+                                </td>
+                                <td  *ngIf="sheduledata.Succ.Wen_13h != 'Nothing' ">
+                                    <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">
+                                        
+                                        {{sheduledata.Succ.Wen_13h}}
+
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        
+                                        {{sheduledata.Succ.WenTea_13h}}
+
+                                    </div>
+                                </td>
+                                <td class="bg-light-gray" *ngIf="sheduledata.Succ.Wen_13h == 'Nothing' " >
+
+                                </td>
+                                <td  *ngIf="sheduledata.Succ.Thu_13h != 'Nothing' " >
+                                    <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">
+                                        
+                                        {{sheduledata.Succ.Thu_13h}}
+
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        
+                                        {{sheduledata.Succ.ThuTea_13h}}
+
+                                    </div>
+                                </td>
+                                <td class="bg-light-gray" *ngIf="sheduledata.Succ.Thu_13h == 'Nothing' " >
+
+                                </td>
+                                <td  *ngIf="sheduledata.Succ.Fri_13h != 'Nothing' " >
+                                    <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">
+                                        
+                                        {{sheduledata.Succ.Fri_13h}}
+
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        
+                                        {{sheduledata.Succ.FriTea_13h}}
+
+                                    </div>
+                                </td>
+                                <td class="bg-light-gray" *ngIf="sheduledata.Succ.Fri_13h == 'Nothing' " >
+
+                                </td>
+                                <td  *ngIf="sheduledata.Succ.Sat_13h != 'Nothing' " >
+                                    <span class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">
+                                        
+                                        {{sheduledata.Succ.Sat_13h}}
+
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        
+                                        {{sheduledata.Succ.SatTea_13h}}
+
+                                    </div>
+                                </td>
+                                <td class="bg-light-gray" *ngIf="sheduledata.Succ.Sat_13h == 'Nothing' " >
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="align-middle">15h45-16h15</td>
+                                <td  *ngIf="sheduledata.Succ.Mon_15h != 'Nothing' " >
+                                    <span class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">
+                                        
+                                        {{sheduledata.Succ.Mon_15h}}
+
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        
+                                        {{sheduledata.Succ.MonTea_15h}}
+
+                                    </div>
+                                </td>
+                                <td class="bg-light-gray" *ngIf="sheduledata.Succ.Mon_15h == 'Nothing' " >
+
+                                </td>
+                                <td  *ngIf="sheduledata.Succ.Tue_15h != 'Nothing' " >
+                                    <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">
+                                        
+                                        {{sheduledata.Succ.Tue_15h}}
+
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        
+                                        {{sheduledata.Succ.TueTea_15h}}
+
+                                    </div>
+                                </td>
+                                <td class="bg-light-gray" *ngIf="sheduledata.Succ.Tue_15h == 'Nothing' " >
+
+                                </td>
+                                <td  *ngIf="sheduledata.Succ.Wen_15h != 'Nothing' " >
+                                    <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">
+                                        
+                                        {{sheduledata.Succ.Wen_15h}}
+
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        
+                                        {{sheduledata.Succ.WenTea_15h}}
+
+                                    </div>
+                                </td>
+                                <td class="bg-light-gray" *ngIf="sheduledata.Succ.Wen_15h == 'Nothing' " >
+
+                                </td>
+                                <td  *ngIf="sheduledata.Succ.Thu_15h != 'Nothing' " >
+                                    <span class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">
+                                        
+                                        {{sheduledata.Succ.Thu_15h}}
+
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        
+                                        {{sheduledata.Succ.ThuTea_15h}}
+
+                                    </div>
+                                </td>
+                                <td class="bg-light-gray" *ngIf="sheduledata.Succ.Thu_15h == 'Nothing' " >
+
+                                </td>
+                                <td  *ngIf="sheduledata.Succ.Fri_15h != 'Nothing' " >
+                                    <span class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">
+                                        
+                                        {{sheduledata.Succ.Fri_15h}}
+
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        
+                                        {{sheduledata.Succ.FriTea_15h}}
+
+                                    </div>
+                                </td>
+                                <td class="bg-light-gray" *ngIf="sheduledata.Succ.Fri_15h == 'Nothing' " >
+
+                                </td>
+                                <td  *ngIf="sheduledata.Succ.Sat_15h != 'Nothing' " >
+                                    <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">
+                                        
+                                        {{sheduledata.Succ.Sat_15h}}
+
+                                    </span>
+                                    <div class="margin-10px-top font-size14"></div>
+                                    <div class="font-size13 text">
+                                        
+                                        {{sheduledata.Succ.SatTea_15h}}
+
+                                    </div>
+                                </td>
+                                <td class="bg-light-gray" *ngIf="sheduledata.Succ.Sat_15h == 'Nothing' " >
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="container" *ngIf="created == 'false'">
+                <div class="timetable-img text-center">
+                    <h3> We will upload the shedule Sooon  </h3>
+                </div>
+            </div>
+
+             
+        </div>
+        </div>
+        </div>
+        </div>   
+</div>
+   
+
+    </div>
+    </div>
+    </div>
+    </div>

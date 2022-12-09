@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminAuthGuard } from '../../guards/admin-auth.guard';
-import { StudentLayoutComponent } from '../student/student-layout/student-layout.component';
-import { TeacherLayoutComponent } from '../teacher/teacher-layout/teacher-layout.component';
 import { AdminDashboardComponent } from './admin-layout/admin-dashboard/admin-dashboard.component';
 import { AdminLayoutComponent } from './admin-layout/admin-layout.component';
 import { ClassManagementComponent } from './admin-layout/class-management/class-management.component';
+import { MyprofilComponent } from './admin-layout/myprofil/myprofil.component';
 import { AddsheduleComponent } from './admin-layout/schedule/addshedule/addshedule.component';
 import { EditscheduleComponent } from './admin-layout/schedule/editschedule/editschedule.component';
 import { ScheduleComponent } from './admin-layout/schedule/schedule.component';
@@ -26,6 +25,8 @@ const routes: Routes = [
   { path: 'schedule/:id', component: ShowsheduleComponent },
   { path: 'editschedule/:id', component: EditscheduleComponent },
   { path: 'class', component: ClassManagementComponent },
+  { path: 'myprofil', component: MyprofilComponent },
+
 
   ] },   // Check auth Admin && ajouter partie Admin (Template)
 

@@ -16,18 +16,24 @@ export class AddpopupComponent implements OnInit{
   constructor(private toastr: ToastrService ,private service: AuthserviceService, public dialogref: MatDialogRef<ModalpopupComponent>,@Inject(MAT_DIALOG_DATA) public data:any){}
   editdata:any;
   Name : any ;
-  Classes : any = ["1info","2info","3info"];
+  Classes : any = [];
   info : any ;
   DataResponse :any ;
   ob_update : Subscription | undefined;
   ob_add : Subscription | undefined;
- 
+  resultTeachers: any ;
   ngOnInit(): void {
    // console.log(this.data)
     if(this.data.id!=null && this.data.id!=''){
         this.LoadEditData(this.data.id);
        
       }
+      this.service.getallclass().subscribe(data =>{
+        this.resultTeachers = data ;
+        this.resultTeachers.forEach((item : any) =>{ 
+        this.Classes.push(item["ClassName"])
+         })
+      })
     }
     ngOnDestroy():void{
       this.ob_update?.unsubscribe();

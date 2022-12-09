@@ -13,6 +13,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { TeacherModule } from './layouts/teacher/teacher.module';
 import { LandingModule } from './layouts/landing/landing.module';
 import { StudentModule } from './layouts/student/student.module';
+import { DatePipe } from '@angular/common'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +36,7 @@ import { StudentModule } from './layouts/student/student.module';
     ReactiveFormsModule,
     
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

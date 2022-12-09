@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AuthserviceService } from 'src/app/services/authservice.service';
+import { ToastrService } from 'ngx-toastr';
+
 @Component({
   selector: 'app-editschedule',
   templateUrl: './editschedule.component.html',
@@ -15,11 +17,13 @@ export class EditscheduleComponent {
   resultSubject : any ;
   NameClass : any ; 
   allSubjects  : any = [];
-  Teachers  : any = ["Mohammed ben ali", "Ahmed ben saleh","Sameh ben younes","sirine aliya" , "tarek mhadhbi"];
+  Teachers  : any = [];
+  ResultTeachers : any ; 
   idshedule: any;
   ob_update : Subscription | undefined;
   editdata: any;
-    constructor(private route:ActivatedRoute , private service: AuthserviceService){
+  DataResponse: any;
+    constructor(private route:ActivatedRoute , private service: AuthserviceService , private toastr: ToastrService , private routes:Router){
     this.route.params.subscribe((data)=>{
      
       this.idshedule = data['id'] ;
@@ -35,9 +39,17 @@ export class EditscheduleComponent {
     this.ob_update = this.service.getoneschedule(this.idshedule).subscribe(item => {
       
       this.editdata = item;
-     
-      this.NameClass= this.editdata['Succ'].ClassName
-      console.log(this.editdata['Succ'].Mon_9h)
+      //console.log(this.editdata['Succ']._id)
+      this.NameClass=  this.editdata['Succ'].ClassName
+      this.service.getteachersbyClass(this.NameClass).subscribe(data =>{
+        this.ResultTeachers = data ;
+        //console.log(this.ResultTeachers)
+       this.ResultTeachers.Succ.forEach((item : any) =>{
+          this.Teachers.push(item["Name"])
+         })
+      }) 
+    
+     // console.log(this.NameClass)
       this.Reactiveform.setValue({
         Mon_9h: this.editdata['Succ'].Mon_9h,
         Mon_10h:this.editdata['Succ'].Mon_10h,
@@ -88,7 +100,10 @@ export class EditscheduleComponent {
         SatTea_13h: this.editdata['Succ'].SatTea_13h,
         SatTea_15h: this.editdata['Succ'].SatTea_15h
       })
-  }); 
+      });
+      
+       
+        
   }
   Reactiveform = new FormGroup({
     Mon_9h: new FormControl("",Validators.required),
@@ -154,6 +169,25 @@ export class EditscheduleComponent {
    
   });
   SaveSchedule(){
+  
+    if (this.Reactiveform.valid ) {
+      this.service.editSchedule(this.editdata['Succ']._id,this.Reactiveform.value).subscribe((response)=>{
+        this.DataResponse = response
 
+        if (this.DataResponse.Succ){
+          this.toastr.success("Shedule successfully Updated ", 'Saved');
+          this.routes.navigate(['/admin/schedule']);
+
+        }else if (this.DataResponse.error){
+          this.toastr.error(this.DataResponse.error, 'Error');
+
+        }
+
+      })
+
+    }else{
+      this.toastr.error("please complete schedule", 'Error');
+
+    }
   }
 }

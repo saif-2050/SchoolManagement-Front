@@ -23,6 +23,18 @@ export class AuthserviceService {
     return this.http.post('http://localhost:9000/add_schedule',data)
   }
 
+  editSchedule(id:any , data:any){
+    return this.http.put('http://localhost:9000/edit_schedule/'+id,data)
+  }
+  Removechedule(id:any){
+    return this.http.delete('http://localhost:9000/delete_schedule/'+id);
+
+  }
+
+  
+  getscheduleByName(Name:any){
+    return this.http.get('http://localhost:9000/scheduleByName/'+Name)
+  }
 
   getallsubject(){
     return this.http.get('http://localhost:9000/allsubject')
@@ -71,6 +83,7 @@ export class AuthserviceService {
   }
 
 
+
   SetNewPassword(data:any){
     return this.http.post('http://localhost:9000/SetPassword',data)
   }
@@ -112,6 +125,16 @@ export class AuthserviceService {
     }
     
   }
+
+  getmyid(){
+    let token :any = localStorage.getItem('token') ;
+    if(token!=null){
+      let decode = this.helper.decodeToken(token) ;
+      return decode.id 
+    }else{
+      return "false" 
+    }
+  }
   getMemberType(){
     let token :any = localStorage.getItem('token') ;
     if(token!=null){
@@ -126,6 +149,15 @@ export class AuthserviceService {
     }
 }
 
+  getEmail(){
+    let token :any = localStorage.getItem('token') ;
+    if(token!=null){
+      let decode = this.helper.decodeToken(token) ;
+      return decode.Email 
+    }else{
+      return "false" 
+    }
+  }
   getrole(){
     let role :any = localStorage.getItem('role') ;
       if (role != null){
@@ -143,7 +175,15 @@ export class AuthserviceService {
         return "false" ; 
     }
   }
+  RemoveData(){
+    localStorage.removeItem('role')
+    localStorage.removeItem('LogginIn')
+    localStorage.removeItem('token')
+  }
   //teacher
+  getteachersbyClass(ClassName:any){
+    return this.http.get('http://localhost:9000/teachers/'+ClassName)
+  }
   getteachers(){
     return this.http.get('http://localhost:9000/teachers')
   }

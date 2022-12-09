@@ -1,9 +1,11 @@
 import { Component, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { AuthserviceService } from 'src/app/services/authservice.service';
+import { DeletesheduleComponent } from './deleteshedule/deleteshedule.component';
 
 @Component({
   selector: 'app-schedule',
@@ -17,7 +19,7 @@ export class ScheduleComponent {
   rel : any ;
   @ViewChild(MatPaginator) paginator !: MatPaginator;
   @ViewChild(MatSort) sort !: MatSort;
-  constructor(private auth:AuthserviceService ){}
+  constructor(private auth:AuthserviceService , private dialog: MatDialog){}
   ngOnInit(): void {
     this.getallschedule();
 
@@ -42,8 +44,26 @@ export class ScheduleComponent {
     
 
   }
-  FunctionDelete(id: any){
+  FunctionDelete(id: any) {
     
+    const dialogRef = this.dialog.open(DeletesheduleComponent,{
+      data:{
+        message: 'Are you sure want to delete this Shedule ?',
+        buttonText: {
+          ok: 'Delete',
+          cancel: 'No'
+        }
+      }
+    });
 
-  }
+    dialogRef.afterClosed().subscribe((confirmed: boolean) => {
+      if (confirmed) {
+        this.auth.Removechedule(id).subscribe(result  => {
+        this.rel = result
+        this.getallschedule();
+     });
+      }
+    });
+
+  } 
 }

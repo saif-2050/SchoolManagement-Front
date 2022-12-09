@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthserviceService } from 'src/app/services/authservice.service';
+import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-addshedule',
@@ -14,8 +16,10 @@ export class AddsheduleComponent {
   resultSubject : any ;
   NameClass : any ; 
   allSubjects  : any = [];
-  Teachers  : any = ["Mohammed ben ali", "Ahmed ben saleh","Sameh ben younes","sirine aliya" , "tarek mhadhbi"];
-  constructor(private service: AuthserviceService){}
+  Teachers  : any = [];
+  ResultTeachers : any ;
+  DataResponse :any ;
+  constructor(private service: AuthserviceService  , private toastr: ToastrService , private routes:Router ){}
 
   ngOnInit(): void {
     this.service.getallsubject().subscribe(data =>{
@@ -25,6 +29,8 @@ export class AddsheduleComponent {
         this.allSubjects.push(item["SubjectName"])
        })
     })
+     
+
     this.service.getallclass().subscribe(data =>{
       //this.allclass.push(data["ClassName"]);
       this.resultClass = data ;
@@ -108,13 +114,26 @@ export class AddsheduleComponent {
   SaveSchedule(){
   
     if (this.Reactiveform.valid ) {
-      this.service.addSchedule(this.Reactiveform.value).subscribe((result)=>{
-        console.log(result)
+      this.service.addSchedule(this.Reactiveform.value).subscribe((response)=>{
+        this.DataResponse = response
+
+        if (this.DataResponse.Succ){
+          this.toastr.success("Shedule successfully Added ", 'Saved');
+          this.routes.navigate(['/admin/schedule']);
+
+
+        }else if (this.DataResponse.error){
+          this.toastr.error(this.DataResponse.error, 'Error');
+
+        }
+
       })
       //console.log(this.Reactiveform.value);
 
     }else{
       console.log("please complete schedule");
+      this.toastr.warning("please complete schedule", 'Warn');
+
     }
   }
 
@@ -123,6 +142,14 @@ export class AddsheduleComponent {
     if ( this.Reactiveform.value.ClassName !="" ){
       this.step = this.step + 1 ;
       this.NameClass = this.Reactiveform.value.ClassName ;
+      this.Teachers =[];
+      this.ResultTeachers = [] ;
+      this.service.getteachersbyClass(this.NameClass).subscribe(data =>{
+        this.ResultTeachers = data ;
+        this.ResultTeachers.Succ.forEach((item : any) =>{
+          this.Teachers.push(item["Name"])
+         })
+      })
     }
   
 

@@ -22,6 +22,8 @@ import { EditscheduleComponent } from './admin-layout/schedule/editschedule/edit
 
 import { AddpopupComponent } from './admin-layout/teachers-management/addpopup/addpopup.component';
 import { tDeletepopupComponent } from './admin-layout/teachers-management/tdeletepopup/tdeletepopup.component';
+import { DeletesheduleComponent } from './admin-layout/schedule/deleteshedule/deleteshedule.component';
+import { MyprofilComponent } from './admin-layout/myprofil/myprofil.component';
 @NgModule({
   declarations: [
     AdminLayoutComponent,
@@ -41,7 +43,9 @@ import { tDeletepopupComponent } from './admin-layout/teachers-management/tdelet
     ShowsheduleComponent,
     EditscheduleComponent,
     AddpopupComponent,
-    tDeletepopupComponent
+    tDeletepopupComponent,
+    DeletesheduleComponent,
+    MyprofilComponent
   ],
   imports: [CommonModule, AdminRoutingModule,MaterialModule,ReactiveFormsModule],
 })

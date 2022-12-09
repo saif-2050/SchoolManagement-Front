@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { AuthserviceService } from 'src/app/services/authservice.service';
 
 @Component({
   selector: 'frontend-admin-layout',
@@ -12,13 +14,13 @@ export class AdminLayoutComponent implements OnInit {
   setting : any = false ;
   memberStyle = 'member-default';
   settingStyle = 'setting-default';
-
+  Name : any ; 
   token = "fgfdgdfg" ; 
   userid = "255112" ;
 
-  constructor(private route:Router) {
+  constructor(private route:Router , private service:AuthserviceService , private toastr: ToastrService  ) {
     this.dash = this.route.url;
-    
+    this.Name = this.service.getname() ; 
   }
 
 
@@ -41,6 +43,12 @@ export class AdminLayoutComponent implements OnInit {
       this.ActiveMember = false ;
       this.memberStyle = 'member-default';
     }
+  }
+  logout(){
+
+    this.service.RemoveData()
+    this.toastr.success("you are successfully Logout", 'Logout');
+    this.route.navigate(['/login']);
   }
   ngOnInit(): void {}
 }
